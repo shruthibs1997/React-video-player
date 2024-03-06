@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import VideoPlayer from './components/vedio';
+import List from "./components/data.json"
+import { useEffect, useState } from 'react';
+import PlayListComp from './components/playListComp';
 
 function App() {
+  const [playlist,setPlaylist] = useState([]);
+
+  const getAllList =()=>{
+    const arr = List.categories.flatMap((e)=>{
+       return e.videos.map((x)=>{
+        return x
+       })
+    })
+    setPlaylist(arr)
+  }
+
+  useEffect(()=>{
+    getAllList()
+  },[])
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <VideoPlayer playlist={playlist} setPlaylist={setPlaylist}/>
+      {/* <PlayListComp  videos={playlist} playlist={playlist} setPlaylist={setPlaylist}/> */}
     </div>
   );
 }
