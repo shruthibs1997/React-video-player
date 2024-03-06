@@ -1,4 +1,4 @@
-### Video Player
+# Video Player
 This project implements a video player component and a playlist component using React. It provides essential functionalities such as play/pause toggle, seek functionality, timer displaying current playback time and duration, autoplay, and speed selector for playback speed adjustment. Additionally, it includes a playlist component that allows users to reorder videos, click on a video to load and play it in the video player, and implements features such as fullscreen mode, volume control, thumbnail previews, and search/filter functionality for the playlist. The application is also responsive for various screen sizes and includes keyboard shortcuts for ease of use.
 
 ## Project Link
